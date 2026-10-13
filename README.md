@@ -39,10 +39,19 @@ npm run build    # 产物输出到 dist/
 
 ### 方案 A：GitHub Pages（推荐，免费）
 
-1. 在 GitHub 新建仓库（如 `portfolio`），把本目录内容 push 上去（建议推到 `main` 分支）。
-2. 仓库 **Settings → Pages → Build and deployment → Source 选 "GitHub Actions"**。
-3. 推送后 Actions 会自动构建并发布；访问 `https://<你的用户名>.github.io/<仓库名>/`。
-4. 因 `vite.config.ts` 已设 `base: './'`，项目页子路径资源能正确加载，无需额外配置。
+1. 在 GitHub 网页新建**空仓库**，名字填 `portfolio`（**不要**勾选 README / .gitignore / license，保持完全空）。
+2. 在 `portfolio` 目录下执行下面命令（已按你的账号预填，仓库名=portfolio）：
+
+   ```bash
+   git remote add origin https://github.com/yois2002/portfolio.git
+   git branch -M main
+   git push -u origin main
+   ```
+
+   > 第 1 步建好仓库后，也可以直接让 WorkBuddy 帮你跑上面这三条（本会话运行在 Windows，若已缓存 GitHub 凭据即可直接推）。
+3. 仓库 **Settings → Pages → Build and deployment → Source 选 "GitHub Actions"**。
+4. 推送后 Actions 会自动构建并发布；访问 `https://yois2002.github.io/portfolio/`。
+5. 因 `vite.config.ts` 已设 `base: './'`，项目页子路径资源能正确加载，无需额外配置。
 
 > 如需自定义域名，在 Settings → Pages 填 Custom domain 即可。
 
