@@ -73,6 +73,11 @@ const groups = computed(() => [
 </template>
 
 <style scoped>
+/* 收紧「关于我」区块底部留白（默认 section padding-bottom 72px + 下一段 72px 叠加过大） */
+#about {
+  padding-bottom: 40px;
+}
+
 .about-text {
   max-width: 760px;
   color: var(--text);
